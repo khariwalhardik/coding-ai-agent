@@ -78,3 +78,5 @@ response = client.models.generate_content(
   model="gemini-2.5-flash",
   contents=[sample_pdf_1, sample_pdf_2, prompt])
 print(response.text)
+print("prompt token usage:", response.token_usage.prompt_tokens)
+print("completion token usage:", response.token_usage.completion_tokens)
