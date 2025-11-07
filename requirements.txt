@@ -1,0 +1,12 @@
+# dotenv to load environment variables from a .env file
+dotenv
+# requests for making HTTP requests
+requests
+# Flask for building web applications
+Flask
+# SQLAlchemy for database ORM
+SQLAlchemy
+# pytest for testing
+pytest
+# google gemini client library
+google-gemini
