@@ -10,6 +10,8 @@ def run_python_file(working_dir: str, file_path: str) -> str:
     """
     # Resolve absolute path
     target_file = os.path.abspath(os.path.join(working_dir, file_path))
+    # what if that file is a server file
+    
     if not os.path.isfile(target_file):
         return f"File does not exist: {target_file}"
 
@@ -26,3 +28,21 @@ def run_python_file(working_dir: str, file_path: str) -> str:
         return output
     except Exception as e:
         return f"Exception occurred: {str(e)}"
+
+schema_run_python_file = {
+    "type": "function",
+    "parameters": {
+        "working_dir": {
+            "type": "string",
+            "description": "The directory in which to run the Python file."
+        },
+        "file_path": {
+            "type": "string",
+            "description": "The path to the Python file to run."
+        }
+    },
+    "returns": {
+        "type": "string",
+        "description": "The output of the Python file or an error message."
+    }
+}
